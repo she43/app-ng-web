@@ -1,0 +1,103 @@
+<form class="form-style bg-2" >
+    <div class="container bg-1">
+  
+        <h3 style="color: white">India Forums - Author's Posts within a thread - Finder</h3>
+      </div>
+ 
+    <div id="amad">
+        <app-awsad></app-awsad>
+    </div>
+ 
+  <div class="form-group text-center" style="margin-top:-5%;">
+    <!-- <div class="spinner-border text-dark" *ngIf="isLoading" role="status">
+              <span class="sr-only">Loading...</span>
+            </div> -->
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+      <p style="font-size: 20px; color: grey">Loading...</p>
+    </ngx-spinner>
+    
+    <div class="container ">
+    
+      <div class="form-group row text-center m-3">
+              <label for="tid" class="control-label col-sm-2 offset-sm-3">India forums Thread link</label>
+        <input type="text" class="form-control cont-form col-sm-4 offset-sm-1" name="tid" [(ngModel)]="_data.tid" id="tid" 
+          required />
+      </div>
+      <div class="form-group row text-center m-3">
+
+        <label for="wordsQty" class="control-label col-sm-3 offset-sm-2">Minimum words per post</label>
+        <input type="text" class="form-control cont-form col-sm-4 offset-sm-1" name="_data.wordsQty" size="5" [(ngModel)]="_data.wordsQty"
+          id="wordsQty" required />
+      </div>
+      <div class="form-group row text-center m-3">
+
+        <label for="quote" class="control-label col-sm-3 offset-sm-2">Include Quoted(Replied) Posts*</label>
+        
+        <input type="checkbox" class="form-control cont-form col-sm-4 offset-sm-1" name="quote" [(ngModel)]="_data.includeQuote"
+          id="quote" required />
+
+      </div>
+      <div class="form-group row">
+        <button class="btn btn-primary form-control cont-form col-sm-3 offset-sm-2 mt-3"
+          (click)="get_data()">Submit</button>
+          
+         <input class="btn btn-primary form-control cont-form col-sm-4 offset-sm-1 mt-3" type="Submit" value="Download" 
+          id="download" (click)="downloadfunc()" /> 
+              </div>
+      <div class="row offset-sm-3">
+         All Members only posts - fetched by default irrespective of word count.
+      </div>
+      <div class="row">
+     
+        Find the posts by the post maker in India forums in a given thread.
+        Kindly wait. Your request should be processed typically in a minute or two. If not, kindly refresh and try again.
+        Once, the data is retrived, please save this file or copy paste it to your local notes to use it again.
+      </div>
+    </div>
+    <div class="form-group row text-center">
+      <a class="col-md-1 offset-md-2" href="https://www.amazon.in/gp/product/B00EOXNQCS/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=she43-21&linkId=ae418f3f348eb57702a54ee519094c6f&language=en_IN" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00EOXNQCS&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=she43-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=she43-21&language=en_IN&l=li3&o=31&a=B00EOXNQCS" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+      <br />
+      <a class="col-md-1 offset-md-2" href="https://www.amazon.in/Making-Khushi-Mine-Complete-Anamika-ebook/dp/B00VC40E4U/ref=as_li_ss_il?_encoding=UTF8&pd_rd_i=B00VC40E4U&pd_rd_r=90cda771-61b0-4c7b-86c4-4c492120117d&pd_rd_w=gqQJc&pd_rd_wg=P49gb&pf_rd_p=b5c4df7b-dc8c-47a6-947a-01271326b67b&pf_rd_r=SWPX22Q0B8FHHJN3GK6T&psc=1&refRID=SWPX22Q0B8FHHJN3GK6T&linkCode=li3&tag=she43-21&linkId=9d565420196ca249d7d3da2c1c3a22a8&language=en_IN" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00VC40E4U&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=she43-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=she43-21&language=en_IN&l=li3&o=31&a=B00VC40E4U" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+      <br />
+      <a class="col-md-1 offset-md-2" href="https://www.amazon.in/Love-Life-Labyrinth-Chaitalee-Ghosalkar-ebook/dp/B00OSAVMLO/ref=as_li_ss_il?_encoding=UTF8&pd_rd_i=B00OSAVMLO&pd_rd_r=84e1eff8-b1c6-43c4-a15e-9240d9377209&pd_rd_w=Sgf19&pd_rd_wg=E2AP6&pf_rd_p=b5c4df7b-dc8c-47a6-947a-01271326b67b&pf_rd_r=J2EAD8B18FVRX78SGNGJ&psc=1&refRID=J2EAD8B18FVRX78SGNGJ&linkCode=li3&tag=she43-21&linkId=0eee00dd3352757399fc800f3cd62534&language=en_IN" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00OSAVMLO&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=she43-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=she43-21&language=en_IN&l=li3&o=31&a=B00OSAVMLO" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+     </div>
+    <div class="container " id="resultDiv">
+
+      <div id="result" style="width: 100%; text-align:center">
+       
+      </div>
+    </div>
+     </div>
+  <div class="container" style="margin-top: -15%" *ngIf="chapters && !isLoading && nonEmpty" id="resultTable">
+    <div class="text-center">
+     <h4 style="color:white;">Post Links</h4> 
+    </div>
+      <table class="table table-bordered table-striped bg-light text-center">
+    
+        <tr>
+          <th>
+            Sr. No
+          </th>
+          <th>Link</th>
+        </tr>
+        <tr *ngFor="let chapter of chapters; index as i">
+          <td>
+            {{ i+1 }}
+          </td>
+         <td>
+          <a href="{{chapter.chapLink}}"> Link</a>
+         </td>
+        </tr>
+      </table>
+
+    </div>
+    <div class="form-group row text-center">
+      <a class="col-md-1 offset-md-2" href="https://www.amazon.in/gp/product/B07N4K4JVX/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=she43-21&linkId=e354ddc6ac534d9a34e614153537ad9d&language=en_IN" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07N4K4JVX&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=she43-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=she43-21&language=en_IN&l=li3&o=31&a=B07N4K4JVX" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+      <br />
+      <a class="col-md-1 offset-md-2"  href="https://www.amazon.in/Wedded-Strangers-Soulmates-ebook/dp/B079RXS464/ref=as_li_ss_il?_encoding=UTF8&pd_rd_i=B079RXS464&pd_rd_r=87337202-66b8-4f32-a55f-9f9f47aacae7&pd_rd_w=HGIqM&pd_rd_wg=FvHfr&pf_rd_p=b5c4df7b-dc8c-47a6-947a-01271326b67b&pf_rd_r=Z0WEN1DGD35ZHT0S0TXD&psc=1&refRID=Z0WEN1DGD35ZHT0S0TXD&linkCode=li3&tag=she43-21&linkId=9f21fcc368ee5c0922531d7aaecca4e0&language=en_IN" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B079RXS464&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=she43-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=she43-21&language=en_IN&l=li3&o=31&a=B079RXS464" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+      <br />
+      <a class="col-md-1 offset-md-2" href="https://www.amazon.in/gp/product/B01EZPGWR0/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=she43-21&linkId=7f60b94728af44f6d44283a31e809829&language=en_IN" target="_blank"><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01EZPGWR0&Format=_SL250_&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1&tag=she43-21&language=en_IN" ></a><img src="https://ir-in.amazon-adsystem.com/e/ir?t=she43-21&language=en_IN&l=li3&o=31&a=B01EZPGWR0" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+      </div>
+
+</form>
+
